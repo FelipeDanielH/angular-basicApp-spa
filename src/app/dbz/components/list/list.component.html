@@ -1,0 +1,27 @@
+<h4>Listado</h4>
+<table class="table">
+  <thead>
+    <tr>
+      <th scope="col">#</th>
+      <th scope="col">Nombre</th>
+      <th scope="col">Numero</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="
+          let character of characterList;
+          index as i;
+          first as isfirst;
+          last as isLast;
+          even as isEven;
+          odd as isOdd"
+        [ngClass]="{
+          'table-light': isEven
+         }">
+      <th scope="row">{{ i }}</th>
+      <td> {{character.name}} </td>
+      <td> {{character.randNumber}} </td>
+      <td> <button (click)="onDeleteCharacter(character.id)" class="btn btn-danger"> X</button></td>
+    </tr>
+  </tbody>
+</table>
